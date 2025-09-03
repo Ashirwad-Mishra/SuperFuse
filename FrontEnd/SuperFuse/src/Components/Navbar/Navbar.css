@@ -1,0 +1,131 @@
+/* Import a clean and modern font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* General Navbar Styling */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Updated blue gradient background */
+  background: linear-gradient(90deg, #2980b9, #2c3e50);
+  padding: 0.8rem 2rem; /* Adjusted padding */
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease;
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Logo Styling - using yellow for a highlight */
+.navbar-logo a {
+  color: #f1c40f; /* Bright yellow */
+  text-decoration: none;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-logo a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* Navigation Links Styling - smaller fonts and gap */
+.navbar-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically align items */
+  flex-grow: 1; /* Allows the links to take up available space */
+  margin: 0;
+  padding: 0;
+  gap: 1.8rem; /* Reduced spacing */
+  flex-wrap: wrap; /* Allow links to wrap */
+}
+
+.navbar-links li a {
+  color: #ecf0f1; /* Off-white for links */
+  text-decoration: none;
+  font-size: 0.9rem; /* Smaller font size */
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Underline effect: now uses yellow */
+.navbar-links li a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #f1c40f; /* Yellow underline */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.navbar-links li a:hover {
+  color: #ffffff;
+}
+
+.navbar-links li a:hover::after {
+  transform: scaleX(1);
+}
+
+/* New grouped auth buttons styling */
+.navbar-auth-group {
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 25px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-left: 1rem; /* Add some space from the links */
+}
+
+.btn-auth {
+  background: transparent;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  color: white;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+/* Pink hover effect for auth buttons */
+.btn-auth:hover {
+  background-color: #e84393; /* Vibrant pink */
+  color: white;
+}
+
+.auth-separator {
+  width: 1px;
+  height: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Design for very small screens */
+@media (max-width: 480px) {
+    .navbar-auth-group {
+        display: none;
+    }
+    .navbar-logo a {
+        font-size: 1.5rem;
+    }
+    .navbar {
+      justify-content: center;
+    }
+    .navbar-links {
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+}

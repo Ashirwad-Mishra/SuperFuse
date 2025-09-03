@@ -1,0 +1,90 @@
+/* SuperServices.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+.super-services-container {
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+}
+
+/* Hero Section Styling */
+.services-hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #f4f7f6;
+  color: #2c3e50;
+}
+
+.services-hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.services-hero p {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Category Grid Styling */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Category Card Styling */
+.category-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+}
+
+.category-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+
+.category-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #34495e;
+}
+
+.category-description {
+  font-size: 0.95rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.category-button {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 25px;
+  background: #e84393; /* Using the pink from our color scheme */
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #d81b60; /* Darker pink on hover */
+  box-shadow: 0 5px 15px rgba(232, 67, 147, 0.4);
+}
