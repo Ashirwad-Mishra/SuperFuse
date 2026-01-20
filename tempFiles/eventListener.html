@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="click_me"><h1>ABES ENGINEERING COLLEGE</h1></div>
+    <button id="btn">Click me</button>
+    <script>
+        let div1 = document.getElementsByClassName("click_me")[0];
+        let btn1 = document.getElementById('btn');
+
+        btn1.addEventListener('click' , ()=>{
+            if (div1.style.color === 'red')
+                {
+                    div1.style.color = 'blue';
+                }
+            else div1.style.color = 'red';
+        });
+    </script>
+</body>
+</html>
