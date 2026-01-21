@@ -14,18 +14,14 @@ public class UserController {
 
     private final UserServices userServices;
 
-    public UserController(UserServices userServices) {
+    public UserController(UserServices userServices)
+    {
         this.userServices = userServices;
     }
 
-    @PostMapping("/register")
-    public ResponseEntity<User> register(@RequestBody User user) {
-        User createdUser = userServices.registerUser(user);
-        return ResponseEntity.status(HttpStatus.CREATED).body(createdUser);
-    }
-
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteUser(@PathVariable UUID id) {
+    public ResponseEntity<String> deleteUser(@PathVariable UUID id)
+    {
         userServices.deleteUser(id);
         return ResponseEntity.ok("User deleted successfully");
     }
