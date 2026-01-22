@@ -9,4 +9,5 @@ public interface UserRepos extends JpaRepository<User, UUID>
     public boolean existsByEmail(String email);
     public boolean existsByPhoneNumber(String phoneNumber);
     public boolean existsByUserName(String userName);
+    public User findByUserName(String userName);
 }
