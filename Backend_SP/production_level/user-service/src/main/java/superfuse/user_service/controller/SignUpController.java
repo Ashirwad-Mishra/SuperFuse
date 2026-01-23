@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import superfuse.user_service.DTOs.APIResponse;
+import superfuse.user_service.DTOs.RegisterResponseDTO;
 import superfuse.user_service.Model.User;
 import superfuse.user_service.services.UserServices;
 
@@ -23,10 +24,10 @@ public class SignUpController
     }
 
     @PostMapping("/register")
-    public ResponseEntity<APIResponse<User>> register(@RequestBody User user)
+    public ResponseEntity<APIResponse<RegisterResponseDTO>> register(@RequestBody User user)
     {
         try {
-            User createdUser = userServices.registerUser(user);
+            RegisterResponseDTO createdUser = userServices.registerUser(user);
             return ResponseEntity.status(HttpStatus.CREATED)
                     .body(new APIResponse<>("Signup successful!", createdUser));
         } catch (Exception e) {

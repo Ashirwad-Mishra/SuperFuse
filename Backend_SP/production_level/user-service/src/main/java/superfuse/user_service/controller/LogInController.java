@@ -1,32 +1,31 @@
 package superfuse.user_service.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.validation.Valid;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import superfuse.user_service.DTOs.LogInRequest;
 import superfuse.user_service.DTOs.LogInResponse;
-import superfuse.user_service.Model.User;
-import superfuse.user_service.Repos.UserRepos;
-import superfuse.user_service.services.UserServices;
+import superfuse.user_service.services.AuthServices;
 
 @RestController
 @RequestMapping("login")
 public class LogInController
 {
-    private UserServices userServices;
-    @Autowired
-    private  UserRepos userRepos;
-    public LogInController (UserServices userServices)
+    private final AuthServices authServices;
+
+    public LogInController (AuthServices authServices)
     {
-        this.userServices = userServices;
+        this.authServices = authServices;
     }
 
-    @PostMapping("username")
-    public LogInResponse LoginService(LogInRequest request)
+    @PostMapping("/username")
+    public ResponseEntity<LogInResponse> logIn(@Valid @RequestBody LogInRequest request)
     {
-        User user = userRepos.findByUserName(request.getData())
-                .orElseThrow(() -> new RuntimeException("User not found.........."));
+        LogInResponse logInResponse = authServices.logInByUserName(request);
 
+        return ResponseEntity.ok(logInResponse);
     }
 }

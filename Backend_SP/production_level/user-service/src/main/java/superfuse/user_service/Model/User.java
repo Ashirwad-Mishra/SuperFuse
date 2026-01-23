@@ -13,7 +13,8 @@ import java.util.UUID;
 @Entity
 @Table(name = "users")
 @Data
-public class User {
+public class User
+{
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -47,12 +48,19 @@ public class User {
     private Instant updatedAt;
 
     @PrePersist
-    void onCreate() {
+    void onCreate()
+    {
         createdAt = Instant.now();
     }
 
     @PreUpdate
-    void onUpdate() {
+    void onUpdate()
+    {
         updatedAt = Instant.now();
+    }
+
+    public boolean isActive()
+    {
+        return (this.accountStatus.equals("ACTIVE"));
     }
 }

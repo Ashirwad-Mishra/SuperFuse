@@ -1,16 +1,17 @@
 package superfuse.user_service.controller;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
-import superfuse.user_service.Model.User;
+import superfuse.user_service.DTOs.UserProfileResponse;
 import superfuse.user_service.services.UserServices;
 
 import java.util.UUID;
 
 @RestController
 @RequestMapping("/users")
-public class UserController {
+public class UserController
+{
 
     private final UserServices userServices;
 
@@ -24,5 +25,11 @@ public class UserController {
     {
         userServices.deleteUser(id);
         return ResponseEntity.ok("User deleted successfully");
+    }
+
+    @GetMapping("/u")
+    public ResponseEntity<UserProfileResponse> userProfile(Authentication auth)
+    {
+        return ResponseEntity.ok(userServices.getProfile(auth.getName()));
     }
 }
