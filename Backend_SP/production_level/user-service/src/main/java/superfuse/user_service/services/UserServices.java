@@ -3,6 +3,7 @@ package superfuse.user_service.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import superfuse.user_service.DTOs.ChangeRoleRepo;
 import superfuse.user_service.DTOs.RegisterResponseDTO;
 import superfuse.user_service.DTOs.UserProfileResponse;
 import superfuse.user_service.Model.User;
@@ -64,5 +65,31 @@ public class UserServices
             throw new RuntimeException("User not found");
 
         userRepos.deleteById(id);
+    }
+
+    public String suspendUser(UUID id)
+    {
+        User user = userRepos.getUserById(id)
+                .orElseThrow( () -> new RuntimeException("User does not exist!!!!!!!"));
+
+        user.setAccountStatus(AccountStatus.SUSPENDED);
+
+        return "The account has been suspended!!!!!!!";
+    }
+
+    public ChangeRoleRepo becomeAnAdmin(UUID id)
+    {
+        User user = userRepos.getUserById(id)
+                .orElseThrow(() -> new RuntimeException("User doesn't exist!!!!!!"));
+
+        if (!user.isActive()) throw new RuntimeException("The user has been suspended.............");
+
+        user.setRole(Role.ADMIN);
+
+        return new ChangeRoleRepo(
+                user.getUserName(),
+                user.getRole(),
+                "Congratulations! You have been upgraded to an admin."
+        );
     }
 }

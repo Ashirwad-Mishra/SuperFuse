@@ -24,6 +24,7 @@ public class JWTService {
         return Jwts.builder()
                 .setSubject(user.getUserName())
                 .claim("id", user.getUserId())
+                .claim("role" , user.getRole().name())
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 24))
                 .signWith(secretKey) // ✅ correct way

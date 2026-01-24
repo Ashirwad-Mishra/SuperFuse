@@ -39,4 +39,9 @@ public class AuthServices
 
         return new LogInResponse(token , "bearer" , user.getUserId());
     }
+
+    public String logout()
+    {
+        return "Logged out successfully!!!!!!!!!";
+    }
 }
