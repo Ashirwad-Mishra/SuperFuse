@@ -69,7 +69,7 @@ public class UserServices
 
     public String suspendUser(UUID id)
     {
-        User user = userRepos.getUserById(id)
+        User user = userRepos.getUserByUserId(id)
                 .orElseThrow( () -> new RuntimeException("User does not exist!!!!!!!"));
 
         user.setAccountStatus(AccountStatus.SUSPENDED);
@@ -79,7 +79,7 @@ public class UserServices
 
     public ChangeRoleRepo becomeAnAdmin(UUID id)
     {
-        User user = userRepos.getUserById(id)
+        User user = userRepos.getUserByUserId(id)
                 .orElseThrow(() -> new RuntimeException("User doesn't exist!!!!!!"));
 
         if (!user.isActive()) throw new RuntimeException("The user has been suspended.............");

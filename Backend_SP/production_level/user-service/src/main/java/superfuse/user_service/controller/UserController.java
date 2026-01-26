@@ -34,7 +34,7 @@ public class UserController
         return ResponseEntity.ok(userServices.getProfile(auth.getName()));
     }
 
-    @PutMapping("/to/be/admin/{/id}")
+    @PutMapping("/to/be/admin/{id}")
     public ResponseEntity<ChangeRoleRepo> beComeAdmin(@PathVariable UUID id)
     {
         return ResponseEntity.ok(userServices.becomeAnAdmin(id));

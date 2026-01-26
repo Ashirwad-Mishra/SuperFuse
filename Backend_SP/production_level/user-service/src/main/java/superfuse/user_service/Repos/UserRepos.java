@@ -10,5 +10,5 @@ public interface UserRepos extends JpaRepository<User, UUID>
     public boolean existsByPhoneNumber(String phoneNumber);
     public boolean existsByUserName(String userName);
     public Optional<User> findByUserName(String userName);
-    public Optional<User> getUserById(UUID id);
+    public Optional<User> getUserByUserId(UUID id);
 }
