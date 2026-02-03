@@ -5,9 +5,11 @@ import superfuse.address_services.DTOs.GetAddresses;
 import superfuse.address_services.Entities.Address;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface AddressRepo extends JpaRepository<Address , UUID>
 {
     public List<GetAddresses> findByUserId(String userId);
+    Optional<Address> findByAddressIdAndUserId(UUID addressId, String userId);
 }

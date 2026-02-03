@@ -2,12 +2,11 @@ package superfuse.address_services.Controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import superfuse.address_services.DTOs.AddANewAddressRequestDTO;
-import superfuse.address_services.DTOs.AddAddressResponseDTO;
-import superfuse.address_services.DTOs.GetAddresses;
+import superfuse.address_services.DTOs.*;
 import superfuse.address_services.services.AddressesServices;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/address")
@@ -31,5 +30,15 @@ public class AddressController
                                                                         addANewAddressRequestDTO)
     {
         return ResponseEntity.ok(addressesServices.addANewAddress(addANewAddressRequestDTO));
+    }
+
+    @PatchMapping("update/{addressId}")
+    public ResponseEntity<UpdateAddressResponseDTO> updateAddress(
+            @PathVariable UUID addressId,
+            @RequestBody UpdateAddressDTO updateAddressDTO
+            )
+    {
+
+        return ResponseEntity.ok(addressesServices.updateAddress(addressId , updateAddressDTO));
     }
 }

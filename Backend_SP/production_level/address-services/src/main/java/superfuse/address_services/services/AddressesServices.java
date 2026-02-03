@@ -2,14 +2,13 @@ package superfuse.address_services.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import superfuse.address_services.DTOs.AddANewAddressRequestDTO;
-import superfuse.address_services.DTOs.AddAddressResponseDTO;
-import superfuse.address_services.DTOs.GetAddresses;
+import superfuse.address_services.DTOs.*;
 import superfuse.address_services.Entities.Address;
 import superfuse.address_services.Repos.AddressRepo;
 import superfuse.address_services.Utils.SecurityUtil;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class AddressesServices
@@ -45,7 +44,61 @@ public class AddressesServices
                 saved.getCreatedAt()
         );
     }
+    public UpdateAddressResponseDTO updateAddress(UUID addressId , UpdateAddressDTO updateAddressDTO)
+    {
+        String userId = SecurityUtil.getCurrentUser();
 
+        Address address = addressRepo.findByAddressIdAndUserId(addressId , userId)
+                .orElseThrow(() -> new RuntimeException("wrong user id or address id............."));
+
+        if (updateAddressDTO.getAddressType() != null)
+        {
+            address.setAddressType(updateAddressDTO.getAddressType());
+        }
+
+        if (updateAddressDTO.getStreet() != null)
+        {
+            address.setStreet(updateAddressDTO.getStreet());
+        }
+
+        if (updateAddressDTO.getCity() != null)
+        {
+            address.setCity(updateAddressDTO.getCity());
+        }
+
+        if (updateAddressDTO.getState() != null)
+        {
+            address.setState(updateAddressDTO.getState());
+        }
+
+        if (updateAddressDTO.getCountry() != null)
+        {
+            address.setCountry(updateAddressDTO.getCountry());
+        }
+
+        if (updateAddressDTO.getPostalCode() != null)
+        {
+            address.setPostalCode(updateAddressDTO.getPostalCode());
+        }
+
+        if (updateAddressDTO.getAdditionalInfo() != null)
+        {
+            address.setAdditionalInfo(updateAddressDTO.getAdditionalInfo());
+        }
+        Address saved = addressRepo.save(address);
+        return new UpdateAddressResponseDTO(
+                "The address has updated successfully.............",
+                saved.getAddressId(),
+                saved.getAddressType(),
+                saved.getStreet(),
+                saved.getCity(),
+                saved.getState(),
+                saved.getCountry(),
+                saved.getPostalCode(),
+                saved.getAdditionalInfo(),
+                saved.getUpdatedAt()
+        );
+    }
     public List<GetAddresses> getAddresses()
     {
         String userId = SecurityUtil.getCurrentUser();
