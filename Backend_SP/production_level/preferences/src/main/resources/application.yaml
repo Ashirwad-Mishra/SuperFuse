@@ -1,0 +1,33 @@
+server:
+  port: 8083   # different from address-service (8082)
+
+spring:
+  application:
+    name: preferences-service
+  flyway:
+    enabled: false
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/superfuse_db
+    username: postgres
+    password: Abes@2027
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
+    org.springframework.web: info
+
+jwt:
+  secret: superfuse-secret-key-very-long-and-secure
+  expiration: 86400000
