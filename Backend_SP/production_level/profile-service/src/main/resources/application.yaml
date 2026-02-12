@@ -1,14 +1,35 @@
 server:
   port: 8084
+
 spring:
   application:
     name: profile-service
 
-  flyway:
-    enable: false
-
   datasource:
-    url: jdbc:postgresql://localhost:5432/superfuse_db
+    url: jdbc:postgresql://localhost:5432/superfuse_db?currentSchema=public
     username: postgres
     password: Abes@2027
     driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: validate   # SAFE MODE
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+        default_schema: public
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.hibernate.orm.jdbc.bind: trace
+
+jwt:
+  secret: superfuse-secret-key-very-long-and-secure
+  expiration: 86400000
