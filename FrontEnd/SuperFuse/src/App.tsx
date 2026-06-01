@@ -7,12 +7,12 @@ import Home from './Components/Home/Home';
 import SuperServices from './Components/SuperServices/SuperServices';
 import Profile from './Components/profile/profile';
 import ProductServices from './Components/SuperShop/ProductServies/productServices';
+import SuperFood from './Components/SuperFood/SuperFood';
+import MovieBooking from './Components/MovieBooking/MovieBooking';
 
 // --- Placeholder Components ---
 const SuperPayment = () => <div style={{textAlign: 'center', padding: '50px'}}><h1>Super Payment Page</h1></div>;
 const SuperTravel = () => <div style={{textAlign: 'center', padding: '50px'}}><h1>Super Travel Page</h1></div>;
-const SuperFood = () => <div style={{textAlign: 'center', padding: '50px'}}><h1>Super Food Page</h1></div>;
-const MovieBooking = () => <div style={{textAlign: 'center', padding: '50px'}}><h1>Movie Booking Page</h1></div>;
 
 const App: React.FC = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);

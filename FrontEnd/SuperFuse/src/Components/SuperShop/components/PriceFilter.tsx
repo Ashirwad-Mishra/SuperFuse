@@ -19,16 +19,16 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
     setLocalMax(maxPrice);
   }, [minPrice, maxPrice]);
 
-  const handleMinChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
+  const handleMinChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(event.target.value);
     setLocalMin(value);
     if (value <= localMax) {
       onPriceChange(value, localMax);
     }
   };
 
-  const handleMaxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = Number(e.target.value);
+  const handleMaxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = Number(event.target.value);
     setLocalMax(value);
     if (value >= localMin) {
       onPriceChange(localMin, value);
@@ -61,7 +61,7 @@ const PriceFilter: React.FC<PriceFilterProps> = ({
         </div>
       </div>
       <div className="price-filter-display">
-        ₹{localMin.toFixed(0)} - ₹{localMax.toFixed(0)}
+        Rs {localMin.toFixed(0)} - Rs {localMax.toFixed(0)}
       </div>
     </div>
   );

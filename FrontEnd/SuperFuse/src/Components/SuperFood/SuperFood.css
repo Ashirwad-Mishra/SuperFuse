@@ -1,0 +1,549 @@
+.superfood-page {
+  padding: 20px;
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  color: #222;
+  text-align: left;
+}
+.superfood-page,
+.superfood-page * {
+  box-sizing: border-box;
+}
+.superfood-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.superfood-header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+.superfood-subtitle {
+  margin: 8px 0 0;
+  color: #555;
+  max-width: 560px;
+}
+.superfood-cart-button {
+  background: #1f7a5f;
+  color: white;
+  border: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.superfood-body {
+  display: block;
+}
+.superfood-toolbar {
+  display: grid;
+  grid-template-columns: minmax(220px, 1.4fr) minmax(170px, 0.7fr) minmax(170px, 0.7fr);
+  gap: 12px;
+  align-items: start;
+  margin-bottom: 18px;
+}
+.superfood-toolbar > * {
+  min-width: 0;
+}
+.superfood-filter-block,
+.superfood-search-bar,
+.superfood-order-summary,
+.superfood-menu-footer,
+.superfood-alert-box {
+  background: #fff;
+  border: 1px solid #e4e4e4;
+  border-radius: 10px;
+  padding: 10px;
+}
+.superfood-search-input,
+.superfood-filter-select,
+.superfood-address-input {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  border: 1px solid #d7d7d7;
+  border-radius: 8px;
+  padding: 9px 10px;
+  font-size: 0.9rem;
+  color: #222;
+}
+.superfood-filter-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+}
+.superfood-checkbox-label,
+.superfood-payment-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 0;
+  font-size: 0.86rem;
+}
+.superfood-filter-select {
+  appearance: none;
+  padding: 9px 10px;
+}
+.superfood-quick-filters {
+  grid-column: 1 / -1;
+  padding: 8px 10px;
+}
+.superfood-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.superfood-filter-chips .superfood-checkbox-label {
+  min-height: 32px;
+  border: 1px solid #dfe8e2;
+  border-radius: 999px;
+  background: #f8fbf8;
+  padding: 6px 10px;
+  white-space: nowrap;
+}
+.superfood-filter-chips input {
+  margin: 0;
+}
+.superfood-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.superfood-restaurant-card {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 18px;
+  overflow: hidden;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.superfood-restaurant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+}
+.superfood-restaurant-image {
+  min-height: 150px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.superfood-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  color: white;
+}
+.superfood-status.open {
+  background: #1f7a5f;
+}
+.superfood-status.closed {
+  background: #c73e3e;
+}
+.superfood-restaurant-content {
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+}
+.superfood-restaurant-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+.superfood-restaurant-meta,
+.superfood-restaurant-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #555;
+  font-size: 0.9rem;
+}
+.superfood-restaurant-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.superfood-tag {
+  background: #eef7f1;
+  color: #1f7a5f;
+  font-size: 0.8rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+.superfood-restaurant-offer {
+  margin-top: 6px;
+  color: #0f5f42;
+  font-weight: 600;
+}
+.superfood-empty-state {
+  padding: 32px;
+  text-align: center;
+  color: #666;
+  border: 1px solid #eee;
+  border-radius: 18px;
+}
+.superfood-results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.superfood-result-note {
+  color: #666;
+  font-size: 0.95rem;
+}
+.superfood-restaurant-menu {
+  display: grid;
+  gap: 20px;
+}
+.superfood-back-button {
+  background: transparent;
+  border: none;
+  color: #1f7a5f;
+  font-weight: 700;
+  cursor: pointer;
+}
+.superfood-restaurant-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: flex-start;
+}
+.superfood-restaurant-description {
+  margin: 8px 0;
+  color: #555;
+}
+.superfood-restaurant-detail-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: #555;
+  font-size: 0.95rem;
+}
+.superfood-menu-section {
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 18px;
+  background: #fff;
+}
+.superfood-menu-section h3 {
+  margin: 0 0 14px;
+  font-size: 1.05rem;
+}
+.superfood-menu-list {
+  display: grid;
+  gap: 14px;
+}
+.superfood-menu-item-card {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid #f0f0f0;
+  border-radius: 16px;
+  background: #fafafa;
+}
+.superfood-menu-item-image {
+  min-height: 104px;
+  border-radius: 12px;
+  background-size: cover;
+  background-position: center;
+  background-color: #e8ece8;
+}
+.superfood-menu-item-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-weight: 700;
+}
+.superfood-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.superfood-dot.veg {
+  background: #1f7a5f;
+}
+.superfood-dot.nonveg {
+  background: #c73e3e;
+}
+.superfood-menu-item-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+.superfood-menu-item-description {
+  color: #555;
+  margin-top: 8px;
+}
+.superfood-menu-item-actions {
+  display: grid;
+  align-items: center;
+}
+.superfood-button {
+  background: #1f7a5f;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.superfood-button.secondary {
+  background: #f5f5f5;
+  color: #333;
+}
+.superfood-quantity-stepper {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #d7d7d7;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.superfood-quantity-stepper button {
+  width: 34px;
+  height: 34px;
+  background: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.superfood-quantity-stepper span {
+  min-width: 26px;
+  text-align: center;
+}
+.superfood-unavailable {
+  color: #a94442;
+  font-weight: 700;
+}
+.superfood-menu-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+.superfood-clear-cart {
+  background: transparent;
+  color: #c73e3e;
+  border: none;
+  cursor: pointer;
+  font-weight: 700;
+}
+.superfood-alert-box {
+  display: grid;
+  gap: 16px;
+  background: #fff7e6;
+  border-color: #f5d19e;
+}
+.superfood-alert-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.superfood-cart-drawer,
+.superfood-checkout-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(420px, 100%);
+  background: #fff;
+  border-left: 1px solid #e5e5e5;
+  transform: translateX(100%);
+  transition: transform 0.25s ease;
+  z-index: 100;
+  padding: 20px;
+  overflow-y: auto;
+}
+.superfood-cart-drawer.open,
+.superfood-checkout-panel.open {
+  transform: translateX(0);
+}
+.superfood-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.superfood-close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+.superfood-cart-restaurant {
+  color: #555;
+  font-size: 0.95rem;
+}
+.superfood-cart-items,
+.superfood-order-items,
+.superfood-tracker-steps {
+  display: grid;
+  gap: 14px;
+}
+.superfood-cart-item,
+.superfood-tracker-step,
+.superfood-order-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.superfood-cart-item {
+  flex-wrap: wrap;
+  align-items: stretch;
+  border: 1px solid #f0f0f0;
+  border-radius: 14px;
+  padding: 14px;
+}
+.superfood-cart-item-title {
+  font-weight: 700;
+}
+.superfood-cart-item-meta {
+  display: flex;
+  gap: 10px;
+  color: #666;
+  font-size: 0.9rem;
+}
+.superfood-cart-item-controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.superfood-cart-item-controls button {
+  width: 30px;
+  height: 30px;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.superfood-cart-remove {
+  background: transparent;
+  color: #c73e3e;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+.superfood-cart-summary,
+.superfood-order-summary,
+.superfood-tracker-summary {
+  background: #f8faf7;
+  border: 1px solid #e7ede7;
+  border-radius: 18px;
+  padding: 16px;
+  display: grid;
+  gap: 12px;
+}
+.superfood-cart-row,
+.superfood-tracker-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #333;
+}
+.superfood-cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.superfood-place-order,
+.superfood-checkout-button {
+  width: 100%;
+  margin-top: 14px;
+}
+.superfood-clear-cart-link {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #1f7a5f;
+  cursor: pointer;
+  font-weight: 700;
+}
+.superfood-tracker-step {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border-radius: 14px;
+  border: 1px solid #ececec;
+  background: #fff;
+}
+.superfood-tracker-step.active {
+  border-color: #1f7a5f;
+  background: #eef7f1;
+}
+.superfood-tracker-step-label {
+  font-weight: 700;
+}
+.superfood-tracker-step-time {
+  color: #666;
+  font-size: 0.9rem;
+}
+.superfood-order-item-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.superfood-order-summary h4 {
+  margin: 0 0 10px;
+}
+@media (max-width: 1024px) {
+  .superfood-toolbar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .superfood-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 720px) {
+  .superfood-page {
+    padding: 14px;
+  }
+  .superfood-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .superfood-cart-button {
+    width: 100%;
+  }
+  .superfood-toolbar {
+    grid-template-columns: 1fr;
+  }
+  .superfood-results-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .superfood-grid {
+    grid-template-columns: 1fr;
+  }
+  .superfood-menu-item-card {
+    grid-template-columns: 96px minmax(0, 1fr);
+  }
+  .superfood-menu-item-actions {
+    grid-column: 1 / -1;
+    justify-items: stretch;
+  }
+  .superfood-menu-item-actions .superfood-button,
+  .superfood-quantity-stepper {
+    justify-self: stretch;
+  }
+  .superfood-restaurant-card {
+    border-radius: 16px;
+  }
+  .superfood-restaurant-image {
+    min-height: 160px;
+  }
+}

@@ -32,7 +32,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
         <div className="cart-drawer-header">
           <h2>Shopping Cart</h2>
           <button className="cart-drawer-close-btn" onClick={onClose}>
-            ✕
+            Close
           </button>
         </div>
 
@@ -43,7 +43,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
             </div>
           ) : (
             <div className="cart-items-list">
-              {cartItems.map(item => (
+              {cartItems.map((item) => (
                 <div key={item.product.id} className="cart-item">
                   <img
                     src={item.product.imageUrl}
@@ -52,7 +52,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
                   />
                   <div className="cart-item-details">
                     <h4>{item.product.name}</h4>
-                    <p>₹{item.product.price.toFixed(2)}</p>
+                    <p>Rs {item.product.price.toFixed(2)}</p>
                   </div>
                   <div className="cart-item-quantity">
                     <button
@@ -60,7 +60,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
                         onUpdateQuantity(item.product.id, item.quantity - 1)
                       }
                     >
-                      −
+                      -
                     </button>
                     <span>{item.quantity}</span>
                     <button
@@ -75,7 +75,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
                     className="cart-item-remove-btn"
                     onClick={() => onRemoveItem(item.product.id)}
                   >
-                    🗑
+                    Remove
                   </button>
                 </div>
               ))}
@@ -88,7 +88,7 @@ const CartDrawer: React.FC<CartDrawerProps> = ({
             <div className="cart-summary">
               <div className="cart-summary-row">
                 <span>Subtotal:</span>
-                <span>₹{cartTotal.toFixed(2)}</span>
+                <span>Rs {cartTotal.toFixed(2)}</span>
               </div>
               <div className="cart-summary-row">
                 <span>Items:</span>

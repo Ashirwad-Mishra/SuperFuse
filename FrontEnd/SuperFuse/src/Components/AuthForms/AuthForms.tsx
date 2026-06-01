@@ -15,10 +15,6 @@ const AuthForms: React.FC<AuthFormsProps> = ({ setIsLoggedIn }) => {
   const [loginPassword, setLoginPassword] = useState('');
 
   // State for the signup form
-  const [signupUsername, setSignupUsername] = useState('');
-  const [signupEmail, setSignupEmail] = useState('');
-  const [signupPassword, setSignupPassword] = useState('');
-
 
   const handleLoginSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

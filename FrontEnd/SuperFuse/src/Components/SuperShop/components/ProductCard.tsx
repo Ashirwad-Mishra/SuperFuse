@@ -36,7 +36,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
 
         {product.rating !== undefined && (
           <div className="product-card-rating">
-            ⭐ {product.rating.toFixed(1)} / 5
+            {product.rating.toFixed(1)} / 5
           </div>
         )}
 
@@ -44,14 +44,14 @@ const ProductCard: React.FC<ProductCardProps> = ({ product, onAddToCart }) => {
           {product.discount && product.discount > 0 ? (
             <>
               <span className="product-card-original-price">
-                ₹{product.price.toFixed(2)}
+                Rs {product.price.toFixed(2)}
               </span>
               <span className="product-card-price">
-                ₹{priceAfterDiscount.toFixed(2)}
+                Rs {priceAfterDiscount.toFixed(2)}
               </span>
             </>
           ) : (
-            <span className="product-card-price">₹{product.price.toFixed(2)}</span>
+            <span className="product-card-price">Rs {product.price.toFixed(2)}</span>
           )}
         </div>
 
