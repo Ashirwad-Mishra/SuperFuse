@@ -1,0 +1,14 @@
+export const ServiceType = {
+  PEST_CONTROL: "PEST_CONTROL",
+  AC_REPAIR: "AC_REPAIR",
+  PLUMBING: "PLUMBING",
+  ELECTRICAL: "ELECTRICAL",
+  CLEANING: "CLEANING",
+  MAINTENANCE: "MAINTENANCE",
+  CARPENTRY: "CARPENTRY",
+  PAINTING: "PAINTING",
+  APPLIANCE_REPAIR: "APPLIANCE_REPAIR",
+  LOCKSMITH: "LOCKSMITH",
+} as const;
+
+export type ServiceType = (typeof ServiceType)[keyof typeof ServiceType];

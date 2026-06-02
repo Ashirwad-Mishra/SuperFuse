@@ -1,90 +1,126 @@
-/* SuperServices.css */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* SuperServices Main Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
 
 .super-services-container {
-  font-family: 'Poppins', sans-serif;
-  background-color: #ffffff;
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fafafa;
+  min-height: 100vh;
+  color: #333;
 }
 
-/* Hero Section Styling */
-.services-hero {
+.services-content {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .super-services-container {
+    background: white;
+  }
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Utility Classes */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #FF6B6B;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
   text-align: center;
-  padding: 4rem 2rem;
-  background-color: #f4f7f6;
-  color: #2c3e50;
 }
 
-.services-hero h1 {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 0.5rem;
+.loading-state .spinner {
+  margin-bottom: 20px;
 }
 
-.services-hero p {
-  font-size: 1.2rem;
-  color: #7f8c8d;
-  max-width: 700px;
-  margin: 0 auto;
+.loading-state p {
+  font-size: 14px;
+  color: #666;
+  margin: 8px 0;
 }
 
-/* Category Grid Styling */
-.category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 3rem;
-  max-width: 1200px;
-  margin: 0 auto;
+/* Wrapper for slot selection */
+.slot-selection-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 20px;
+  padding-bottom: 20px;
 }
 
-/* Category Card Styling */
-.category-card {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  border: 1px solid #e0e0e0;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+.slot-selection-wrapper button {
+  margin: 0 24px;
 }
 
-.category-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+@media (max-width: 600px) {
+  .slot-selection-wrapper button {
+    margin: 0 16px;
+  }
 }
 
-.category-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
-  line-height: 1;
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.category-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.75rem;
-  color: #34495e;
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
 }
 
-.category-description {
-  font-size: 0.95rem;
-  color: #7f8c8d;
-  line-height: 1.6;
-  margin-bottom: 2rem;
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
 }
 
-.category-button {
-  padding: 0.8rem 1.8rem;
-  border: none;
-  border-radius: 25px;
-  background: #e84393; /* Using the pink from our color scheme */
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
-.category-button:hover {
-  background-color: #d81b60; /* Darker pink on hover */
-  box-shadow: 0 5px 15px rgba(232, 67, 147, 0.4);
-}

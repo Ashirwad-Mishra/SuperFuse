@@ -1,0 +1,221 @@
+/* Service Details Styles */
+.service-details {
+  max-width: 700px;
+  margin: 0 auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+.btn-back {
+  padding: 12px 16px;
+  background: none;
+  border: none;
+  color: #FF6B6B;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 24px;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+.btn-back:hover {
+  opacity: 0.8;
+}
+
+.details-hero {
+  text-align: center;
+  padding: 40px 24px;
+  background: linear-gradient(135deg, #fff5f5 0%, #fffbfb 100%);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.hero-icon {
+  font-size: 60px;
+  margin-bottom: 16px;
+  display: inline-block;
+}
+
+.details-hero h2 {
+  font-size: 26px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 12px 0;
+}
+
+.details-hero > .description {
+  font-size: 15px;
+  color: #666;
+  margin: 0 0 20px 0;
+  line-height: 1.6;
+}
+
+.rating-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rating-section .rating {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff9800;
+}
+
+.rating-section .reviews {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Content Sections */
+.details-content {
+  padding: 0 24px 24px 24px;
+}
+
+.detail-section {
+  margin-bottom: 32px;
+}
+
+.detail-section h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+/* What's Included */
+.included-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.included-list li {
+  font-size: 14px;
+  color: #333;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  line-height: 1.5;
+}
+
+.included-list .check {
+  color: #4caf50;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+/* Pricing Info */
+.pricing-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.info-card {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+}
+
+.info-card .label {
+  font-size: 12px;
+  color: #999;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.info-card .value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* FAQ */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 0;
+}
+
+.faq-item summary {
+  padding: 14px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  user-select: none;
+  outline: none;
+  transition: background 0.2s;
+}
+
+.faq-item summary:hover {
+  background: #f0f0f0;
+}
+
+.faq-item[open] summary {
+  background: #f0f0f0;
+}
+
+.faq-item p {
+  padding: 0 16px 14px 16px;
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+  border-top: 1px solid #eee;
+  margin-top: 12px;
+}
+
+/* Footer */
+.details-footer {
+  padding: 24px;
+  position: sticky;
+  bottom: 0;
+  background: white;
+  border-top: 1px solid #eee;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 600px) {
+  .service-details {
+    margin: 0;
+  }
+
+  .btn-back {
+    margin-left: 16px;
+  }
+
+  .details-hero {
+    padding: 32px 16px;
+    margin-bottom: 16px;
+  }
+
+  .details-content {
+    padding: 0 16px 16px 16px;
+  }
+
+  .details-footer {
+    padding: 16px;
+  }
+
+  .pricing-info {
+    grid-template-columns: 1fr;
+  }
+}

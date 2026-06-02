@@ -1,0 +1,25 @@
+export const TransportProvider = {
+  SUPER_AIR: 'SuperAir' as const,
+  INDIGO_SKY: 'Indigo Sky' as const,
+  AIR_VISTA: 'AirVista' as const,
+  JET_LOOP: 'JetLoop' as const,
+  FLY_METRO: 'FlyMetro' as const,
+  RAJDHANI_EXPRESS: 'Rajdhani Express' as const,
+  SHATABDI_EXPRESS: 'Shatabdi Express' as const,
+  SUPERFAST_EXPRESS: 'Superfast Express' as const,
+  COASTAL_INTERCITY: 'Coastal Intercity' as const,
+  METRO_LINK_EXPRESS: 'Metro Link Express' as const,
+  SUPER_BUS: 'SuperBus Travels' as const,
+  CITY_LINE: 'CityLine Volvo' as const,
+  NIGHT_RIDER: 'NightRider Travels' as const,
+  ROYAL_ROADWAYS: 'Royal Roadways' as const,
+  METRO_BUS: 'MetroBus Express' as const,
+  SUPER_STAY: 'SuperStay Grand' as const,
+  URBAN_NEST: 'Urban Nest Hotel' as const,
+  BLUE_WAVE: 'BlueWave Resort' as const,
+  CITY_VIEW: 'CityView Suites' as const,
+  ROYAL_ORCHID: 'Royal Orchid Inn' as const,
+  PALM_GROVE: 'Palm Grove Retreat' as const,
+};
+
+export type TransportProvider = (typeof TransportProvider)[keyof typeof TransportProvider];
