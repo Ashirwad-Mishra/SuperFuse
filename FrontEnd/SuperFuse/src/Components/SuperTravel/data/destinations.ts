@@ -3,6 +3,8 @@ import type { Destination } from '../interfaces/Destination';
 export const destinations: Destination[] = [
   { id: 'mumbai', city: 'Mumbai', country: 'India', airportCode: 'BOM', stationCode: 'CSTM', image: 'https://images.unsplash.com/photo-1548259193-2f8d0b1b5fdb?auto=format&fit=crop&w=900&q=80' },
   { id: 'delhi', city: 'Delhi', country: 'India', airportCode: 'DEL', stationCode: 'NDLS', image: 'https://images.unsplash.com/photo-1583002457853-9a4a1aa2c3a2?auto=format&fit=crop&w=900&q=80' },
+  { id: 'jammu', city: 'Jammu', country: 'India', airportCode: 'IXJ', stationCode: 'JAT', image: 'https://images.unsplash.com/photo-1542351538-0a60a45fe7a4?auto=format&fit=crop&w=900&q=80' },
+  { id: 'katra', city: 'Katra', country: 'India', stationCode: 'KTT', image: 'https://images.unsplash.com/photo-1563245373-8f016dfbc5d1?auto=format&fit=crop&w=900&q=80' },
   { id: 'bengaluru', city: 'Bengaluru', country: 'India', airportCode: 'BLR', stationCode: 'SBC', image: 'https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80' },
   { id: 'hyderabad', city: 'Hyderabad', country: 'India', airportCode: 'HYD', stationCode: 'HYB', image: 'https://images.unsplash.com/photo-1502920917128-1aa500764b1f?auto=format&fit=crop&w=900&q=80' },
   { id: 'chennai', city: 'Chennai', country: 'India', airportCode: 'MAA', stationCode: 'MAS', image: 'https://images.unsplash.com/photo-1518684079-0fa88fb97a25?auto=format&fit=crop&w=900&q=80' },
@@ -13,4 +15,11 @@ export const destinations: Destination[] = [
   { id: 'kochi', city: 'Kochi', country: 'India', airportCode: 'COK', stationCode: 'ERS', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80' },
   { id: 'dubai', city: 'Dubai', country: 'UAE', airportCode: 'DXB', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=900&q=80' },
   { id: 'singapore', city: 'Singapore', country: 'Singapore', airportCode: 'SIN', image: 'https://images.unsplash.com/photo-1504805572947-34fad45aed93?auto=format&fit=crop&w=900&q=80' },
+  { id: 'london', city: 'London', country: 'United Kingdom', airportCode: 'LHR', image: 'https://images.unsplash.com/photo-1522098543979-ffc7f79d5c30?auto=format&fit=crop&w=900&q=80' },
+  { id: 'new-york', city: 'New York', country: 'USA', airportCode: 'JFK', image: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=900&q=80' },
+  { id: 'paris', city: 'Paris', country: 'France', airportCode: 'CDG', image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=900&q=80' },
+  { id: 'tokyo', city: 'Tokyo', country: 'Japan', airportCode: 'HND', image: 'https://images.unsplash.com/photo-1549692520-acc6669e2f0c?auto=format&fit=crop&w=900&q=80' },
+  { id: 'sydney', city: 'Sydney', country: 'Australia', airportCode: 'SYD', image: 'https://images.unsplash.com/photo-1506905925346-21bda4d43b81?auto=format&fit=crop&w=900&q=80' },
+  { id: 'los-angeles', city: 'Los Angeles', country: 'USA', airportCode: 'LAX', image: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80' },
+  { id: 'berlin', city: 'Berlin', country: 'Germany', airportCode: 'BER', image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80' },
 ];

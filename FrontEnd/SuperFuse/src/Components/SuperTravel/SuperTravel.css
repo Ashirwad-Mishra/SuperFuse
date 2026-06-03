@@ -1,237 +1,476 @@
-.supertravel-shell {
-  box-sizing: border-box;
-  padding: 24px;
+.supertravel-page {
   min-height: 100vh;
-  background: #f7f9fc;
-  color: #1b2638;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 
-.supertravel-inner {
-  max-width: 1280px;
-  margin: 0 auto;
+.supertravel-hero {
+  min-height: 360px;
+  padding: 56px clamp(20px, 5vw, 80px) 40px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 32px;
+  align-items: end;
+  color: #fff;
+  background:
+    linear-gradient(90deg, rgba(9, 20, 36, 0.84), rgba(9, 20, 36, 0.34)),
+    url("https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=1800&q=80") center/cover;
 }
 
-.supertravel-panel {
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 24px;
-  box-shadow: 0 20px 45px rgba(34, 60, 80, 0.08);
-}
-
-.supertravel-header {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: flex-start;
-  margin-bottom: 20px;
+.supertravel-hero-copy {
+  max-width: 760px;
 }
 
 .supertravel-eyebrow {
-  margin: 0 0 8px;
-  color: #5f6d7a;
+  margin: 0 0 10px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
-  font-size: 0.8rem;
+  color: #ffd166;
 }
 
-.supertravel-controls {
+.supertravel-hero h1 {
+  margin: 0;
+  max-width: 720px;
+  font-size: 46px;
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.supertravel-hero p {
+  margin: 18px 0 0;
+  max-width: 660px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+}
+
+.supertravel-hero-card {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  border-radius: 8px;
+  background: rgba(10, 20, 34, 0.72);
+  backdrop-filter: blur(10px);
+}
+
+.supertravel-hero-card span,
+.supertravel-hero-card p {
+  display: block;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.76);
+  font-size: 14px;
+}
+
+.supertravel-hero-card strong {
+  display: block;
+  margin: 8px 0;
+  font-size: 26px;
+}
+
+.supertravel-planner {
+  width: min(1440px, 94vw);
+  margin: -28px auto 0;
+  padding-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.supertravel-panel {
+  background: #fff;
+  border: 1px solid #dfe5ee;
+  border-radius: 8px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(17, 31, 52, 0.08);
+}
+
+.section-heading {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.section-heading > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #0b6bcb;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  flex: 0 0 auto;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.section-heading p {
+  margin: 5px 0 0;
+  color: #667085;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.trip-form-grid {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.trip-form-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #465364;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.trip-form-grid input {
+  min-width: 0;
+  padding: 11px 12px;
+  border: 1px solid #cfd7e3;
+  border-radius: 7px;
+  color: #172033;
+  background: #fff;
+}
+
+.interest-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.chip,
+.attraction-card,
+.route-card,
+.hotel-row,
+.rental-card {
+  border: 1px solid #d8e0ea;
+  background: #fff;
+  color: #172033;
+  cursor: pointer;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.chip {
+  padding: 9px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.chip.selected,
+.attraction-card.active,
+.route-card.selected,
+.hotel-row.selected,
+.rental-card.selected {
+  border-color: #0b6bcb;
+  background: #eef6ff;
+  box-shadow: 0 8px 20px rgba(11, 107, 203, 0.12);
+}
+
+.attraction-grid,
+.route-grid,
+.rental-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.attraction-card,
+.rental-card {
+  min-height: 120px;
+  padding: 16px;
+  border-radius: 8px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.attraction-card:hover,
+.route-card:hover,
+.hotel-row:hover,
+.rental-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(17, 31, 52, 0.1);
+}
+
+.attraction-card strong,
+.rental-card strong {
+  font-size: 15px;
+}
+
+.attraction-card span,
+.attraction-card small,
+.rental-card span,
+.rental-card small {
+  color: #667085;
+  font-size: 13px;
+}
+
+.route-card {
+  padding: 16px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.route-card-top {
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   align-items: flex-start;
-  gap: 16px;
-  margin: 16px 0;
+}
+
+.route-card-top span {
+  padding: 5px 9px;
+  border-radius: 999px;
+  background: #101828;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.route-legs {
+  margin: 12px 0;
+  color: #465364;
+  font-size: 14px;
+}
+
+.route-metrics {
+  display: flex;
   flex-wrap: wrap;
+  gap: 8px;
 }
 
-.supertravel-results-grid {
-  display: grid;
-  grid-template-columns: 1.4fr 0.7fr;
-  gap: 20px;
+.route-metrics span {
+  padding: 6px 8px;
+  border-radius: 6px;
+  background: #f2f5f9;
+  color: #475467;
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.supertravel-results-list {
+.supertravel-two-column {
   display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 18px;
+}
+
+.hotel-list,
+.itinerary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hotel-row {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  text-align: left;
+}
+
+.hotel-row img {
+  width: 86px;
+  height: 68px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+
+.hotel-row span {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.hotel-row small {
+  color: #667085;
+}
+
+.hotel-row b {
+  color: #0b6bcb;
+  white-space: nowrap;
+}
+
+.itinerary-day {
+  padding: 15px;
+  border: 1px solid #dfe5ee;
+  border-radius: 8px;
+  background: #fbfcfe;
+}
+
+.itinerary-day strong {
+  display: block;
+  margin-bottom: 9px;
+}
+
+.itinerary-day ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #475467;
+  line-height: 1.7;
+}
+
+.budget-table {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.budget-table > div:not(.budget-status) {
+  display: flex;
+  justify-content: space-between;
   gap: 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e8edf3;
 }
 
-.supertravel-summary-column {
+.budget-table span {
+  color: #667085;
+}
+
+.budget-table .total {
+  font-size: 18px;
+}
+
+.budget-status {
+  padding: 12px;
+  border-radius: 7px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.budget-status.good {
+  background: #e8f7ef;
+  color: #137a3d;
+}
+
+.budget-status.warning {
+  background: #fff4e5;
+  color: #9a5b00;
+}
+
+.dashboard-grid {
   display: grid;
-  gap: 16px;
-  position: sticky;
-  top: 24px;
-  align-self: start;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 12px;
 }
 
-@media (max-width: 1024px) {
-  .supertravel-results-grid {
+.dashboard-grid div {
+  padding: 14px;
+  border-radius: 8px;
+  background: #f6f8fb;
+  border: 1px solid #e1e7ef;
+}
+
+.dashboard-grid span {
+  display: block;
+  color: #667085;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.dashboard-grid strong {
+  display: block;
+  font-size: 14px;
+}
+
+.booking-review-strip {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #101828;
+  color: #fff;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.booking-review-strip span {
+  display: block;
+  margin-top: 5px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 13px;
+}
+
+.booking-review-strip button {
+  border: none;
+  border-radius: 7px;
+  background: #ffd166;
+  color: #101828;
+  padding: 11px 18px;
+  font-weight: 900;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media (max-width: 1100px) {
+  .supertravel-hero,
+  .supertravel-two-column {
     grid-template-columns: 1fr;
   }
-  .supertravel-summary-column {
-    position: static;
+
+  .trip-form-grid {
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+  }
+
+  .dashboard-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 720px) {
-  .supertravel-shell {
+  .supertravel-hero {
+    padding: 36px 18px 54px;
+  }
+
+  .supertravel-hero h1 {
+    font-size: 34px;
+  }
+
+  .supertravel-planner {
+    width: 100%;
+    margin-top: 0;
+    padding: 0 12px 32px;
+  }
+
+  .supertravel-panel {
     padding: 16px;
   }
-  .supertravel-panel {
-    padding: 18px;
+
+  .trip-form-grid,
+  .dashboard-grid {
+    grid-template-columns: 1fr;
   }
-}
 
-.card {
-  background: #ffffff;
-  border-radius: 18px;
-  border: 1px solid #e2e8f0;
-  padding: 18px;
-}
+  .hotel-row {
+    grid-template-columns: 74px minmax(0, 1fr);
+  }
 
-.card-compact {
-  padding: 16px;
-}
+  .hotel-row b {
+    grid-column: 2;
+  }
 
-.search-row {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 16px;
-  margin-bottom: 16px;
-}
-
-.passenger-list {
-  display: grid;
-  gap: 12px;
-}
-
-.details-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  align-items: center;
-}
-
-.result-group {
-  display: grid;
-  gap: 16px;
-}
-
-.input-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  width: 100%;
-}
-
-.input-group label {
-  font-size: 0.85rem;
-  color: #4a5568;
-}
-
-.input-group input,
-.input-group select,
-.input-group button,
-.input-group textarea {
-  width: 100%;
-  border-radius: 12px;
-  border: 1px solid #cbd5e1;
-  background: #f8fafc;
-  padding: 12px 14px;
-  font-size: 0.95rem;
-  color: #1f2937;
-  outline: none;
-}
-
-.input-group input:focus,
-.input-group select:focus,
-.input-group textarea:focus {
-  border-color: #4f46e5;
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.12);
-}
-
-button.primary,
-button.secondary {
-  border: 0;
-  border-radius: 14px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-button.primary {
-  background: #4f46e5;
-  color: #ffffff;
-  padding: 12px 18px;
-}
-
-button.secondary {
-  background: #f1f5f9;
-  color: #334155;
-  padding: 12px 16px;
-}
-
-button.primary:hover {
-  background: #4338ca;
-}
-
-button.secondary:hover {
-  background: #e2e8f0;
-}
-
-.tag {
-  display: inline-flex;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: #eef2ff;
-  color: #4338ca;
-  font-size: 0.8rem;
-}
-
-.supertravel-empty {
-  padding: 28px;
-  text-align: center;
-  color: #64748b;
-}
-
-.result-image {
-  width: 98px;
-  min-width: 98px;
-  height: 98px;
-  object-fit: cover;
-  border-radius: 18px;
-}
-
-.result-meta {
-  display: grid;
-  gap: 10px;
-}
-
-.result-grid {
-  display: grid;
-  grid-template-columns: 98px 1fr auto;
-  gap: 16px;
-  align-items: center;
-}
-
-.result-row {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-
-.badge {
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: #f8fafc;
-  color: #475569;
-  font-size: 0.78rem;
-}
-
-.details-label {
-  font-size: 0.8rem;
-  color: #64748b;
-}
-
-.details-value {
-  font-weight: 600;
-  color: #0f172a;
+  .booking-review-strip {
+    align-items: stretch;
+    flex-direction: column;
+  }
 }
